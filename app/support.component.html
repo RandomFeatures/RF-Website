@@ -1,0 +1,53 @@
+<div id="content">
+    <div id="content-sub">
+        <ul>
+            <li class="first">
+                <a href="mailto:support@random-features.net"><strong>Support</strong>For support related inquires and questions write to <div class="email">support@random-features.net</div></a>
+            </li>
+            <li>
+                <a href="mailto:business@random-features.net"><strong>Business</strong>Business inquires and proposals, please contact:<div class="email">business@random-features.net</div></a>
+            </li>
+            <li>
+                <a href="mailto:press@random-features.net"><strong>Press</strong>For press inquires, please contact: <div class="email">press@random-features.net</div></a>
+            </li>
+            <li>
+                <a href="mailto:fans@random-features.net"><strong>Fans</strong>For fan related inquires and questions write to <div class="email">fans@random-features.net</div></a>
+            </li>
+        </ul>
+    </div>
+    <div id="content-main">
+
+        <h1><span>
+					We’d love to hear from all of our fans. Whether it’s for business, enquiries or just to brag about your high score, feel free to contact us!
+					</span></h1>
+        <form name="frmSupport" autocomplete="off" enctype="multipart/form-data" action="support.php" method="post" novalidate action="">
+            <ul>
+                <li><label class="description">Full Name </label>
+                    <input class="text" id="fldname" name="fldname" type="text" spellcheck="false" value="" maxlength="255" tabindex="1" />
+                </li>
+                <li><label class="description">Email Address </label>
+                    <input class="text" id="fldemail" name="fldemail" type="email" spellcheck="false" value="" maxlength="255" tabindex="2" />
+                </li>
+                <li>
+                    <label class="description">Game/Wallpaper</label>
+                    <select id="fldgame" name="fldgame" tabindex="3"> 
+										<option value="" selected="selected">-- Options --</option>
+										<option value="1" >8 Bit Mahjong</option>
+										<option value="2" >Alien Dance Party</option>
+										<option value="3" >Christmas Dreamscape</option>
+										<option value="4" >Christmas Mahjong</option>
+										<option value="5" >Hacker Wars</option>
+										<option value="6" >Halloween Screemscape</option>
+									</select>
+                </li>
+                <li><label class="description">Message </label>
+                    <textarea id="fldcomments" name="fldcomments" spellcheck="true" tabindex="4" rows="" cols=""></textarea>
+                </li>
+                <li><input type="hidden" />
+                    <input id="saveForm" name="saveForm" class="submit" type="submit" value="Submit" tabindex="5" />
+                </li>
+            </ul>
+        </form>
+
+    </div>
+</div>

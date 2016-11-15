@@ -1,0 +1,19 @@
+<div id="wrapper">
+    <div id="wrapper-inner">
+        <div id="header">
+            <h1 id="logo">Random Features, Inc.</h1>
+            <ul id="nav">
+                <li><a routerLink="/home"><span>Home</span></a></li>
+                <li><a routerLink="/games"><span>Games</span></a></li>
+                <li><a routerLink="/wallpaper"><span>Live Wallpaper</span></a></li>
+                <li><a routerLink="/support"><span>Support</span></a></li>
+                <li><a routerLink="/about"><span>About</span></a></li>
+            </ul>
+            <h1>{{sectionTitle}}</h1>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div id="footer">
+    My software doesn't have bugs, it just develops random features.<br /> &copy; {{copyrightyear}} Random Features, Inc.
+</div>
