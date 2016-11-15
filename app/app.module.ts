@@ -4,8 +4,8 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
 // Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent }   from './app.component';
 import { HomeComponent }   from './home.component';
@@ -17,7 +17,8 @@ import { routing } from './app.routing';
 import { NewsService }          from './news.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule, InMemoryWebApiModule.forRoot(InMemoryDataService), routing],
+  imports:      [ BrowserModule, FormsModule, HttpModule, routing], 
+  //InMemoryWebApiModule.forRoot(InMemoryDataService), 
   declarations: [ AppComponent, HomeComponent, GamesComponent, WallpaperComponent, SupportComponent, AboutComponent],
   providers: [ NewsService ],
   bootstrap:    [ AppComponent ]

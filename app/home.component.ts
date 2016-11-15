@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Story } from './story';
+import { Story } from './modules/story';
 import { NewsService } from './news.service';
 
 
@@ -12,6 +12,7 @@ import { NewsService } from './news.service';
 })
 export class HomeComponent implements OnInit {
     news: Story[];
+    errorMessage: string;
 
     constructor(
         private newsService: NewsService,
@@ -20,15 +21,15 @@ export class HomeComponent implements OnInit {
 
     getNews(): void {
         this.newsService
-            .getNews()
-            .then(news => this.news = news.sort(function (a, b) {return b.id - a.id;}));
+            .getList()
+            .then(news => this.news = news.sort(function (a, b) {return b.id - a.id;}), error =>  this.errorMessage = <any>error);
+           
     }
 
     ngOnInit(): void {
+       
         this.getNews()
-      
     }
-
 }
 
 
