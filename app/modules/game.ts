@@ -7,6 +7,7 @@ import { ScreenShots } from './screenshots';
 export class Game {
     id: number;
     game: string;
+    type: string;
     system: string;
     version: string;
     downloads: Downloads;

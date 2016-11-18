@@ -1,0 +1,21 @@
+<div id="content">
+    <div id="games">
+        <div id="content-right">
+            <div *ngFor="let wall of wallsList; let isOdd=odd; ">
+                <div *ngIf="isOdd">
+                    <a href="/details/{{wall.localurl}}"><img src="{{wall.iconimage}}" alt="{{wall.game}}" /></a>
+                    <h1 style="margin: 10px 0 30px 0;">{{wall.game}}<br /><span>for {{wall.system}}</span></h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="content-left">
+            <div *ngFor="let wall of wallsList; let isEven=even;">
+                <div *ngIf="isEven">
+                    <a href="/details/{{wall.localurl}}"><img src="{{wall.iconimage}}" alt="{{wall.game}}" /></a>
+                    <h1 style="margin: 10px 0 30px 0;">{{wall.game}}<br /><span>for {{wall.system}}</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

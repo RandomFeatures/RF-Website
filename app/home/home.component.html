@@ -31,15 +31,15 @@
     </div>
 
     <div id="content-main">
-        <div *ngFor="let story of news">
+        <div *ngFor="let story of newsList">
             <h1>{{story.title}}<br />
                 <span>{{story.date}}</span></h1>
-            <a href="{{story.localurl}}"><img class="alignright" src="{{story.image}}" alt="" /></a>
+            <a href="/details/{{story.localurl}}"><img class="alignright" src="{{story.image}}" alt="" /></a>
             <p>
                 {{story.text}}
-                <br /><a href="{{story.localurl}}" title="more">more...</a>
+                <br /><a href="/details/{{story.localurl}}" title="more">more...</a>
                 <br /> <br />
-                <a href="{{story.remoteurl}}"><img src="images/android_app_on_play_large.png" alt="" /></a>
+                <a [href]="story.remoteurl"><img src="images/android_app_on_play_large.png" alt="" /></a>
             </p>
         </div>
 

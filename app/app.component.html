@@ -9,7 +9,7 @@
                 <li><a routerLink="/support"><span>Support</span></a></li>
                 <li><a routerLink="/about"><span>About</span></a></li>
             </ul>
-            <h1>{{sectionTitle}}</h1>
+            <div [innerHTML]="sectionTitle"></div>
         </div>
         <router-outlet></router-outlet>
     </div>

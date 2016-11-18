@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
     moduleId: module.id,
@@ -8,10 +9,12 @@ import { Router } from '@angular/router';
     // styleUrls:['css/style.css']
 })
 export class AboutComponent implements OnInit {
-    sectionTitle = 'About';
+    sectionTitle = '<h1>About</h1>';
 
-    constructor(private router: Router) { }
+    constructor(private router: Router,
+        private mainApp: AppComponent) { }
     ngOnInit(): void {
+        this.mainApp.sectionTitle = this.sectionTitle;
     }
 }
 

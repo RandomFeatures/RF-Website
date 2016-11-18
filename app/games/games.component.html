@@ -1,0 +1,20 @@
+<div id="content">
+    <div id="games">
+        <div id="content-right">
+            <div *ngFor="let game of gamesList; let isOdd=odd; ">
+                <div *ngIf="isOdd">
+                    <a href="/details/{{game.localurl}}"><img src="{{game.iconimage}}" alt="{{game.game}}" /></a>
+                    <h1 style="margin: 10px 0 30px 0;">{{game.game}}<br /><span>for {{game.system}}</span></h1>
+                </div>
+            </div>
+        </div>
+        <div id="content-left">
+            <div *ngFor="let game of gamesList; let isEven=even; ">
+                <div *ngIf="isEven">
+                    <a href="/details/{{game.localurl}}"><img src="{{game.iconimage}}" alt="{{game.game}}" /></a>
+                    <h1 style="margin: 10px 0 30px 0;">{{game.game}}<br /><span>for {{game.system}}</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,26 +1,25 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 
-// Imports for loading & configuring the in-memory web api
-//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService }  from './in-memory-data.service';
-
-import { AppComponent }   from './app.component';
-import { HomeComponent }   from './home.component';
-import { GamesComponent }   from './games.component';
-import { WallpaperComponent } from './wallpaper.component';
-import { SupportComponent }  from './support.component';
-import { AboutComponent }  from './about.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { GamesComponent } from './games/games.component';
+import { WallpaperComponent } from './wallpaper/wallpaper.component';
+import { SupportComponent } from './misc/support.component';
+import { AboutComponent } from './misc/about.component';
+import { DetailsComponent } from './details/details.component';
 import { routing } from './app.routing';
-import { NewsService }          from './news.service';
+import { ApiService } from './api.service';
+
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule, routing], 
-  //InMemoryWebApiModule.forRoot(InMemoryDataService), 
-  declarations: [ AppComponent, HomeComponent, GamesComponent, WallpaperComponent, SupportComponent, AboutComponent],
-  providers: [ NewsService ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, CommonModule, FormsModule, HttpModule, routing],
+  declarations: [AppComponent, HomeComponent, GamesComponent, WallpaperComponent, SupportComponent, AboutComponent, DetailsComponent],
+  providers: [ApiService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

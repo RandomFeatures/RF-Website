@@ -1,0 +1,126 @@
+<div *ngIf="myGame">
+    <link rel="stylesheet" href="../../css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+    <script src="../../js/jquery-1.6.1.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="../../js/jquery.raty.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $("a[rel^='ssimg']").prettyPhoto();
+            $('#free').raty({
+                start: 4.2,
+                readOnly: true,
+                round: {
+                    down: .25,
+                    full: .6,
+                    up: .76
+                }
+            });
+            $('#slide').raty({
+                start: 5,
+                readOnly: true,
+                round: {
+                    down: .25,
+                    full: .6,
+                    up: .76
+                }
+            });
+        });
+    </script>
+
+
+    <div id="content">
+
+        <div id="content-full"><img [src]="myGame.featurelogo" [alt]="myGame.game" /></div>
+
+        <div id="content-right" style="width: 420px;padding: 10px 0 10px 10px;">
+            <!-- AppBrain -->
+            <h1>AppBrain</h1>
+            <blockquote>
+                <div *ngFor="let apb of myGame.appbrain">
+                    <div id='{{apb.id}}' class='appbrain-app'><a [href]='apb.url' style='font-size: 11px; color: #555; font-family: Arial, sans-serif;'>{{apb.title}}</a></div><script type='text/javascript' language='javascript' src='http://www.appbrain.com/api/api.nocache.js'></script>
+                </div>
+                
+            </blockquote>
+            <h1>Downloads</h1>
+            <!-- Google -->
+            <div *ngFor="let ggl of myGame.googleplay">
+                <div style="clear:none; margin: 0 15px 5px 5px; height: 85px; border:1px solid #dddddd; padding:10px 10px; border-radius:5px;-moz-border-radius:5px;">
+                    <a [href]="ggl.url">
+                        <img class="right" [src]="ggl.qrcode" alt="qrcode" width="86" height="86" />
+
+                        <img style="float: left;" src="images/google_play_48.png" alt="Google Play" width="48" height="48" />
+                        <div style="clear:none; margin-left:60px">
+                            <h4>Google Play</h4>
+                            <h2>{{myGame.game}}<span> {{myGame.version}}</span></h2>
+                            <div id="free"></div>
+                            <h4><span>{{myGame.downloads.market}} downloads </span></h4>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+            <!-- Amazon -->
+            <div *ngFor="let amz of myGame.amazon">
+                <div style="clear:none; margin: 0 15px 5px 5px; height: 85px; border:1px solid #dddddd; padding:10px 10px; border-radius:5px;-moz-border-radius:5px;">
+                    <a [href]="amz.url">
+                        <img class="right" [src]="amz.qrcode" alt="qrcode" width="86" height="86" />
+
+                        <img style="float: left;" src="images/amazon.png" alt="Amazon Apps" width="48" height="48" />
+                        <div style="clear:none; margin-left:60px">
+                            <h4>Amazon App Store</h4>
+                            <h2>{{myGame.game}}<span> {{myGame.version}}</span></h2>
+                            <div id="free"></div>
+                            <h4><span>{{myGame.downloads.amazon}} downloads </span></h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- SlideMe -->
+            <div *ngFor="let sme of myGame.slideme">
+                <div style="clear:none; margin: 0 15px 5px 5px; height: 85px; border:1px solid #dddddd; padding:10px 10px; border-radius:5px;-moz-border-radius:5px;">
+                    <a [href]="sme.url">
+                        <img class="right" [src]="sme.qrcode" alt="qrcode" width="86" height="86" />
+
+                        <img style="float: left;" src="images/slideme.png" alt="SlideMe" width="48" height="48" />
+                        <div style="clear:none; margin-left:60px">
+                            <h4>Slide ME</h4>
+                            <h2>{{myGame.game}}<span> {{myGame.version}}</span></h2>
+                            <div id="slide"></div>
+                            <h4><span>{{myGame.downloads.slideme}} downloads </span></h4>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+            <!-- GetJar -->
+            <div *ngFor="let gjar of myGame.getjar">
+                <div style="clear:none; margin: 0 15px 5px 5px; height: 85px; border:1px solid #dddddd; padding:10px 10px; border-radius:5px;-moz-border-radius:5px;">
+                    <a [href]="gjar.url">
+                        <img class="right" [src]="gjar.qrcode" alt="qrcode" width="86" height="86" />
+
+                        <img style="float: left;" src="images/AppIt-44x44.png" alt="GetJar" width="48" height="48" />
+                        <div style="clear:none; margin-left:60px">
+                            <h4>Get Jar</h4>
+                            <h2>{{myGame.game}}<span> {{myGame.version}}</span></h2>
+                            <h4><span>{{myGame.downloads.getjar}} downloads </span></h4>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="padding:10px;" id="content-left">
+            <h1>{{myGame.game}}<br />
+                <span>{{myGame.version}}</span></h1>
+            <div [innerHTML]="myGame.htmldesc"></div>
+            <h1>Screen Shots</h1>
+            <div *ngFor="let ssc of myGame.screenshots.images">
+                <a [href]="myGame.screenshots.base + ssc.image" rel="ssimg[pp_gal]"><img [src]="myGame.screenshots.thumbbase + ssc.thumb" alt="" /></a>
+            </div>
+
+        </div>
+    </div>
+    <div id="games"><span>[<a href="/details/xmas_mahjong">Christmas Mahjong</a>] [<a href="/details/eightbit_mahjong">8 bit Mahjong</a>] [<a href="/details/hacker_wars">Hacker Wars</a>] [<a href="/details/dance_party">Alien Dance Party</a>] [<a href="/details/halloween_dance">Halloween Dance Party</a>] [<a href="/details/screamscape">Halloween Screamscape</a>] [<a href="/details/dreamscape">Christmas Dreamscape</a>]</span></div>
+</div>
