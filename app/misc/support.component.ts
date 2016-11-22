@@ -15,6 +15,8 @@ export class SupportComponent implements OnInit {
         private mainApp: AppComponent) { }
     ngOnInit(): void {
         this.mainApp.sectionTitle = this.sectionTitle;
+        let body = document.getElementsByTagName('body')[0];
+        body.id = '';
     }
 
 }

@@ -5,12 +5,15 @@ import { Game } from '../modules/game';
 import { ApiService } from '../api.service';
 import { AppComponent } from '../app.component';
 import { Subscription } from 'rxjs';
+import { Images } from '../modules/images';
 
+
+declare var jQuery: any;
 @Component({
     moduleId: module.id,
     selector: 'my-details',
     templateUrl: './details.component.html',
-   
+
     // styleUrls:['css/style.css']
 })
 export class DetailsComponent implements OnInit {
@@ -18,7 +21,7 @@ export class DetailsComponent implements OnInit {
     myGame: Game;
     errorMessage: string;
     private subscription: Subscription;
-  
+
     constructor(
         private gameService: ApiService,
         private router: Router,
@@ -29,14 +32,14 @@ export class DetailsComponent implements OnInit {
         this.gameService
             .getGame(itemName)
             .then(rsp => this.gotItem(rsp), error => this.errorMessage = <any>error);
-          
+
     }
 
     private gotItem(rtn: Game) {
         this.myGame = rtn;
-        this.mainApp.sectionTitle = '<h1>'+this.myGame.game +'</h1>';
+        this.mainApp.sectionTitle = '<h1>' + this.myGame.game + '</h1>';
     }
-   
+
     ngOnInit(): void {
         var itemName: string;
         // subscribe to router event
@@ -45,6 +48,8 @@ export class DetailsComponent implements OnInit {
                 let itemName = param['id'];
                 this.getItem(itemName);
             });
+        let body = document.getElementsByTagName('body')[0];
+        body.id = '';
     }
 
     ngOnDestroy() {
@@ -52,6 +57,12 @@ export class DetailsComponent implements OnInit {
         this.subscription.unsubscribe();
     }
 
-    
+    ngAfterViewChecked() {
+
+    }
+
+    ngAfterViewInit() {
+
+    }
 }
 

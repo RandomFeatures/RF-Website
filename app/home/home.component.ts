@@ -3,18 +3,29 @@ import { Router } from '@angular/router';
 import { Story } from '../modules/story';
 import { ApiService } from '../api.service';
 import { AppComponent } from '../app.component';
+//Importt the Image interface
+import { Image } from './image.interface';
+//IMAGES array implementing Image interface
+var IMAGES: Image[] = [
+    { "alt": "8 Bit Mahjong", "url": "images/feature1.png" },
+    { "alt": "Hacker Wars", "url": "images/feature2.png" },
+    { "alt": "Christmas Mahjong", "url": "images/feature3.png" },
+    { "alt": "Christmas Dreamscape", "url": "images/feature4.png" },
+    { "alt": "Halloween Screamscape", "url": "images/feature5.png" },
+    { "alt": "Alien Dance Party", "url": "images/feature6.png" }
+];
 
 @Component({
     moduleId: module.id,
     selector: 'my-Home',
-    templateUrl: './home.component.html'
-    // styleUrls:['css/style.css']
+    templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
     newsList: Story[];
     errorMessage: string;
-    sectionTitle = "<h1></h1>"
-    //sectionTitle = '<div id="feature"class="stepcarousel"><div class="belt"><div class="panel"><img src="images/feature1.png"alt="8 Bit Mahjong"/></div><div class="panel"><img src="images/feature2.png"alt="Hacker Wars"/></div><div class="panel"><img src="images/feature3.png"alt="Chirstmas Mahjong"/></div><div class="panel"><img src="images/feature4.png"alt="Christmas Dreamscape"/></div><div class="panel"><img src="images/feature5.png"alt="Halloween Screamscape"/></div><div class="panel"><img src="images/feature6.png"alt="Alien Dance Party"/></div></div></div><div id="feature-scroll"><a href="javascript:stepcarousel.stepBy(\'feature\', -1)"class="previous">Previous</a><a href="javascript:stepcarousel.stepBy(\'feature\', 1)"class="next">Next</a></div>';
+    //sectionTitle = "<h1></h1>";
+    sectionTitle = '<div id="feature" class="carousel"><ul class="slides">';
+    public images = IMAGES;
     constructor(
         private newsService: ApiService,
         private router: Router,
@@ -29,8 +40,19 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.mainApp.sectionTitle = this.sectionTitle;
+
         this.getNews()
+
+        for (var image of this.images) {
+            this.sectionTitle += '<li class="panel"><img src="' + image.url + '" alt="' + image.alt + '"></li>';
+        }
+        this.sectionTitle += '</ul></div>';
+        console.log(this.sectionTitle);
+        this.mainApp.sectionTitle = this.sectionTitle;
+
+        let body = document.getElementsByTagName('body')[0];
+        body.id = 'index';
+
     }
 }
 

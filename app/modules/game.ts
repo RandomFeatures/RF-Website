@@ -21,5 +21,5 @@ export class Game {
     getjar: DownloadSite[];
     amazon: DownloadSite[];
     video: string;
-    screenshots: ScreenShots[];
+    screenshots: ScreenShots;
 }

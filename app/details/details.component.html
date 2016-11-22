@@ -1,46 +1,20 @@
 <div *ngIf="myGame">
-    <link rel="stylesheet" href="../../css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
-    <script src="../../js/jquery-1.6.1.min.js" type="text/javascript"></script>
-    <script src="../../js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" src="../../js/jquery.raty.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            $("a[rel^='ssimg']").prettyPhoto();
-            $('#free').raty({
-                start: 4.2,
-                readOnly: true,
-                round: {
-                    down: .25,
-                    full: .6,
-                    up: .76
-                }
-            });
-            $('#slide').raty({
-                start: 5,
-                readOnly: true,
-                round: {
-                    down: .25,
-                    full: .6,
-                    up: .76
-                }
-            });
-        });
-    </script>
-
-
     <div id="content">
 
         <div id="content-full"><img [src]="myGame.featurelogo" [alt]="myGame.game" /></div>
 
         <div id="content-right" style="width: 420px;padding: 10px 0 10px 10px;">
             <!-- AppBrain -->
+            <!--
             <h1>AppBrain</h1>
             <blockquote>
                 <div *ngFor="let apb of myGame.appbrain">
-                    <div id='{{apb.id}}' class='appbrain-app'><a [href]='apb.url' style='font-size: 11px; color: #555; font-family: Arial, sans-serif;'>{{apb.title}}</a></div><script type='text/javascript' language='javascript' src='http://www.appbrain.com/api/api.nocache.js'></script>
+                    <div id='{{apb.id}}' class='appbrain-app'><a [href]='apb.url' style='font-size: 11px; color: #555; font-family: Arial, sans-serif;'>{{apb.title}}</a></div>
+                    <script type='text/javascript' language='javascript' src='http://www.appbrain.com/api/api.nocache.js'></script>
                 </div>
-                
+
             </blockquote>
+            -->
             <h1>Downloads</h1>
             <!-- Google -->
             <div *ngFor="let ggl of myGame.googleplay">
@@ -116,9 +90,17 @@
                 <span>{{myGame.version}}</span></h1>
             <div [innerHTML]="myGame.htmldesc"></div>
             <h1>Screen Shots</h1>
-            <div *ngFor="let ssc of myGame.screenshots.images">
-                <a [href]="myGame.screenshots.base + ssc.image" rel="ssimg[pp_gal]"><img [src]="myGame.screenshots.thumbbase + ssc.thumb" alt="" /></a>
+
+            <div id="feature" class="carousel" style="height:auto">
+                <ul class="slides">
+                    <li *ngFor="let ssc of myGame.screenshots.images.slice(0,5)" class="panel" style="height:auto;padding:none;"><img [src]="myGame.screenshots.base + ssc.image" alt="" style="width:400px;height:auto;"></li>
+                </ul>
             </div>
+
+            <!--
+                    <a [href]="myGame.screenshots.base + ssc.image" rel="ssimg[pp_gal]"><img [src]="myGame.screenshots.thumbbase + ssc.thumb" alt="" /></a>
+                    -->
+
 
         </div>
     </div>

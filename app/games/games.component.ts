@@ -32,6 +32,8 @@ export class GamesComponent implements OnInit {
 
         this.mainApp.sectionTitle = this.sectionTitle;
         this.getGames();
+        let body = document.getElementsByTagName('body')[0];
+        body.id = '';
 
     }
 }

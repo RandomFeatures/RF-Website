@@ -20,7 +20,7 @@ export class WallpaperComponent implements OnInit {
         private mainApp: AppComponent) { }
 
 
-   private getWallpapers(): void {
+    private getWallpapers(): void {
         this.wallpaperService
             .getGameList(2)
             .then(wall => this.wallsList = wall, error => this.errorMessage = <any>error);
@@ -30,6 +30,8 @@ export class WallpaperComponent implements OnInit {
     ngOnInit(): void {
         this.mainApp.sectionTitle = this.sectionTitle;
         this.getWallpapers();
+        let body = document.getElementsByTagName('body')[0];
+        body.id = '';
     }
 
 }

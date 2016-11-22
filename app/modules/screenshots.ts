@@ -1,3 +1,6 @@
+import { Images } from './images';
+
+
 export class ScreenShots {
     base: string;
     thumbbase: string;
@@ -5,7 +8,3 @@ export class ScreenShots {
     
 }
 
-export class Images {
-    image: string;
-    thumb: string;
-}

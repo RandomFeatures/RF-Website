@@ -1,0 +1,643 @@
+/* = UNIVERSAL STYLES ==================== */
+
+* {
+    margin: 0;
+    /*padding: 0;*/
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    background: #e0e0e0;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+
+/* = LAYOUT STYLES ==================== */
+
+#wrapper {
+    background: #FFF url(../images/bg.jpg) repeat-x 0 0;
+}
+
+#wrapper-inner {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#header {
+    height: 215px;
+    background: url(../images/logo.jpg) no-repeat 0 0;
+}
+
+#content {
+    overflow: hidden;
+    padding-bottom: 40px;
+    clear: both;
+}
+
+#content-full {
+    width: 960px;
+    margin-left: 0;
+}
+
+#content-main {
+    margin-right: 320px;
+    margin-left: 0;
+}
+
+#content-sub {
+    width: 300px;
+    background: url(../images/bg_sidebar-top.gif) no-repeat 0 0;
+    margin-top: 20px;
+    padding-top: 2px;
+    float: right;
+}
+
+#footer {
+    width: 100%;
+    background: url(../images/bg_footer.gif) repeat-x 0 0;
+    text-align: center;
+    color: #999;
+    padding: 20px 0;
+    font-size: 10px;
+}
+
+#content-left {
+    margin-right: 480px;
+    margin-left: 0;
+    padding-left: 0px;
+}
+
+#content-right {
+    width: 480px;
+    float: right;
+    padding-right: 0px
+}
+
+
+/* = INDEX LAYOUT STYLES = */
+
+body#index #header {
+    background: url(../images/logo-index.jpg) no-repeat 0 0;
+}
+
+body#index #wrapper {
+    background: #FFF url(../images/bg-index.jpg) repeat-x 0 0;
+}
+
+body#index #header {
+    height: 430px;
+    background: url(../images/logo-index.jpg) no-repeat 0 0;
+}
+
+body#index #feature {
+    width: 800px;
+    clear: both;
+    margin: 0 auto;
+}
+
+body#index #feature-scroll {
+    float: left;
+    width: 940px;
+    margin-top: -160px;
+}
+
+
+/* = ELEMENT STYLES ==================== */
+
+h1 {
+    color: #b8090b;
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+h1 span {
+    color: #888;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+h2 {
+    color: #888;
+    font-size: 12px;
+    margin: 0 0;
+    font-weight: normal
+}
+
+h2 span {
+    color: #888;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+h3 {
+    color: #b8090b;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+h4 {
+    color: #b8090b;
+    font-size: 14px;
+}
+
+h4 span {
+    color: #888;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+h5 {
+    color: #fff;
+    font-size: 16px;
+    padding: 40px 0 0 0;
+}
+
+ul,
+ol {
+    margin: 5px 20px;
+}
+
+p {
+    margin: 20px 0;
+    min-height: 150px;
+}
+
+a {
+    color: #b8090b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    outline: none;
+}
+
+a:focus {
+    outline-style: none;
+}
+
+
+/*activate this style if you do not want the border appearing on click of anchor tags in Firefox. However, it will render the css invalid. */
+
+img {
+    border: none;
+}
+
+img.float-right {
+    float: right;
+    margin: 0 20px;
+}
+
+img.right {
+    float: right;
+    margin: 0;
+}
+
+img.alignright {
+    float: right;
+    margin: 0 10px 0 10px;
+}
+
+img.alignleft {
+    float: left;
+    padding: 5px 15px 0 10px;
+}
+
+img.aligncenter {
+    text-align: center;
+}
+
+ul.features {
+    margin: 20px 0;
+}
+
+ul.features li {
+    overflow: hidden;
+    padding: 20px;
+    list-style: none;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+ul.features li:hover {
+    background: #f3f3f3;
+}
+
+ul.features li img {
+    float: left;
+}
+
+ul.features li span {
+    margin-left: 120px;
+    display: block;
+}
+
+ul.features li span strong {
+    color: #b8090b;
+    font-size: 14px;
+    display: block;
+}
+
+#header h1 {
+    color: #ccc;
+    clear: both;
+    font-size: 24px;
+    font-weight: normal;
+    padding: 18px 20px 6px 40px;
+}
+
+#header h1#logo {
+    margin: 0;
+    width: 320px;
+    height: 120px;
+    float: left;
+    text-indent: -9000px;
+    padding: 0
+}
+
+#footer a {
+    color: #999;
+}
+
+#footer a:hover {
+    color: #b8090b;
+}
+
+#games h1 {
+    color: #b8090b;
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+#games {
+    text-align: center;
+    min-height: 600px;
+}
+
+#games span {
+    color: #888;
+    font-size: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+a.download {
+    display: block;
+    height: 52px;
+    width: 200px;
+    text-indent: -9000px;
+    background: url(../images/button_download.png) no-repeat -210px 0;
+}
+
+a:hover.download {
+    background: url(../images/button_download.png) no-repeat 0 0;
+}
+
+.stepcarousel {
+    position: relative;
+    /*leave this value alone*/
+    overflow: scroll;
+    /*leave this value alone*/
+    height: 280px;
+    /*Height should enough to fit largest content's height*/
+    width: 800px;
+    top: -1px;
+    left: 0;
+}
+
+.stepcarousel .belt {
+    position: absolute;
+    /*leave this value alone*/
+    left: 0;
+    top: 0;
+}
+
+.stepcarousel .panel {
+    font-size: 14px;
+    color: #bfbfbf;
+    float: left;
+    /*leave this value alone*/
+    overflow: hidden;
+    /*clip content that go outside dimensions of holding panel DIV*/
+    width: 800px;
+    /*Width of each panel holding each content. If removed, widths should be individually defined on each content DIV then. */
+}
+
+a.previous {
+    float: left;
+    display: block;
+    text-indent: -9000px;
+    background: url(../images/icon_arrow_previous.gif) no-repeat 0 0;
+    width: 22px;
+    height: 22px;
+}
+
+a:hover.previous {
+    background: url(../images/icon_arrow_previous.gif) no-repeat -50px 0;
+}
+
+a.next {
+    float: right;
+    display: block;
+    text-indent: -9000px;
+    background: url(../images/icon_arrow_next.gif) no-repeat 0 0;
+    width: 22px;
+    height: 22px;
+}
+
+a:hover.next {
+    background: url(../images/icon_arrow_next.gif) no-repeat -50px 0;
+}
+
+.address {
+    padding-left: 12px;
+    background: url(../images/icon_envelope.gif) no-repeat 0 2px;
+}
+
+.phone {
+    padding-left: 12px;
+    background: url(../images/icon_phone.gif) no-repeat 0 2px;
+}
+
+.email {
+    padding-left: 12px;
+    background: url(../images/icon_cursor.gif) no-repeat 0 2px;
+}
+
+
+/* = NAV STYLES ==================== */
+
+ul#nav {
+    margin: 40px;
+    float: right;
+}
+
+ul#nav li {
+    float: left;
+    list-style: none;
+}
+
+ul#nav li a {
+    font-weight: bold;
+    margin: 0 0 0 5px;
+    background: url(../images/bg_nav-option.gif) no-repeat 0 0;
+    padding: 9px 0;
+}
+
+ul#nav li a span {
+    background: url(../images/bg_nav-option.gif) no-repeat 100% 0;
+    padding: 9px 9px 9px 0;
+    margin-left: 9px;
+}
+
+ul#nav li a:hover {
+    text-decoration: none;
+    color: #535353;
+    background: url(../images/bg_nav-option.gif) no-repeat 0 -100px;
+}
+
+ul#nav li a:hover span {
+    background: url(../images/bg_nav-option.gif) no-repeat 100% -100px;
+}
+
+#content-sub ul {
+    background: url(../images/bg_sidebar-bottom.gif) no-repeat 0 100%;
+    margin: 0;
+    padding: 0 2px 2px 2px;
+}
+
+#content-sub ul li {
+    list-style: none;
+}
+
+#content-sub ul li strong {
+    display: block;
+    font-size: 12px;
+}
+
+#content-sub ul li a {
+    font-size: 10px;
+    color: #000;
+    padding: 10px;
+    display: block;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+#content-sub ul li a:hover {
+    text-decoration: none;
+    background: #fff url(../images/icon_pointer.gif) no-repeat 3px 15px;
+}
+
+#content-sub ul li a:hover strong {
+    color: #b8090b;
+}
+
+#content-sub ul li.first a {
+    display: block;
+    border-top: none;
+}
+
+#content-sub ul li.last a {
+    display: block;
+    border-bottom: none;
+}
+
+#content-sub ul li.contact {
+    font-size: 10px;
+    padding: 10px;
+    border-top: 1px solid #FFF;
+}
+
+#content-sub ul li:hover.contact {
+    background: #FFF;
+}
+
+#content-sub ul li.contact a {
+    padding: 0;
+    border: none;
+}
+
+#content-sub ul li.contact a:hover {
+    background: none;
+    color: #b8090b;
+}
+
+
+/* = FORM STYLES ==================== */
+
+#content form ul {
+    margin: 20px 0;
+}
+
+#content form ul li {
+    list-style: none;
+    margin: 0 0 20px 0;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: bold;
+}
+
+label.description {
+    padding: 0 0 1px;
+}
+
+label.choice {
+    font-weight: normal;
+    margin: -18px 0 0 25px;
+    padding: 4px 0 5px;
+}
+
+input.text {
+    width: 300px;
+}
+
+input.checkbox {
+    display: block;
+    margin: 6px 0 0 0;
+}
+
+input.radio {
+    display: block;
+    margin: 6px 0 0 0;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+select {
+    width: 300px;
+}
+
+input.submit {
+    margin: 0 0 0 222px;
+    display: block;
+    height: 35px;
+    width: 80px;
+    text-indent: -9000px;
+    border: none;
+    background: url(../images/button_send.jpg) no-repeat 0 0;
+}
+
+input:hover.submit {
+    background: url(../images/button_send.jpg) no-repeat -90px 0;
+    cursor: pointer;
+}
+
+.carousel {
+    overflow: hidden;
+    height: 280px;
+    /*Height should enough to fit largest content's height*/
+    width: 800px;
+    top: -1px;
+    left: 0;
+}
+
+.carousel ul {
+    margin: -1px 20px;
+    padding-top: 0.5px;
+}
+
+.slides {
+    list-style: none;
+    position: relative;
+    width: 500%;
+    /* Number of panes * 100% */
+    overflow: hidden;
+    /* Clear floats */
+    /* Slide effect Animations*/
+    -moz-animation: carousel 30s infinite;
+    -webkit-animation: carousel 30s infinite;
+    animation: carousel 30s infinite;
+}
+
+.slides li {
+    position: relative;
+    float: left;
+    width: 20%;
+    /* 100 / number of panes */
+}
+
+.carousel img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel h2 {
+    margin-bottom: 0;
+    font-size: 1em;
+    padding: 1.5em 0.5em 1.5em 0.5em;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-transform: uppercase;
+}
+
+@keyframes carousel {
+    0% {
+        left: -5%;
+    }
+    11% {
+        left: -5%;
+    }
+    12.5% {
+        left: -105%;
+    }
+    23.5% {
+        left: -105%;
+    }
+    25% {
+        left: -205%;
+    }
+    36% {
+        left: -205%;
+    }
+    37.5% {
+        left: -305%;
+    }
+    48.5% {
+        left: -305%;
+    }
+    50% {
+        left: -405%;
+    }
+    61% {
+        left: -405%;
+    }
+    62.5% {
+        left: -305%;
+    }
+    73.5% {
+        left: -305%;
+    }
+    75% {
+        left: -205%;
+    }
+    86% {
+        left: -205%;
+    }
+    87.5% {
+        left: -105%;
+    }
+    98.5% {
+        left: -105%;
+    }
+    100% {
+        left: -5%;
+    }
+}

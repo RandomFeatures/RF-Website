@@ -4,7 +4,6 @@ app/**/*.js
 app/**/*.js.map
 !.gitignore
 images
-css
 js/jquery*.*
 .vscode
 .DS_Store
